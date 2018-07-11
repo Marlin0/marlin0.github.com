@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to Marlin Pages
 
 You can use the [editor on GitHub](https://github.com/Marlin0/marlin0.github.com/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
