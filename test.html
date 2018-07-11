@@ -1,0 +1,32 @@
+<script language="javascript" type="text/javascript">
+
+
+//读文件
+function readFile(filename){
+var fso = new ActiveXObject("Scripting.FileSystemObject");
+var f = fso.OpenTextFile(filename,1);
+var s = "";
+while (!f.AtEndOfStream)
+s += f.ReadLine()+"\n";
+f.Close();
+return s;
+}
+
+//写文件
+function writeFile(filename,filecontent){
+var fso, f, s ;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+f = fso.OpenTextFile(filename,8,true);
+f.WriteLine(filecontent);
+f.Close();
+alert('ok');
+}
+
+</script>
+<html>
+<input type="text" id="in" name="in" />
+<input type="button" value="Write!" onclick="writeFile('12.txt',document.getElementByIdx_x('in').value);"/><br><br>
+<input type="button" value="Read!" onclick="document.getElementByIdx_x('show').value=readFile('12.txt');"/><br>
+<textarea id="show" name="show" cols="100" rows="20" >
+</textarea>
+</html>
