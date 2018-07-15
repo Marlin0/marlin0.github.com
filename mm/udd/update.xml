@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Update>
+	<Soft Name="Miner">
+		<Verson>0.2.7.2</Verson>
+		<IsAuto>0</IsAuto>
+		<DownLoad>https://raw.githubusercontent.com/Marlin0/Miner/master/Miner.exe</DownLoad>
+		<MDownLoad>https://pan.baidu.com/s/1jIembzg</MDownLoad>
+	</Soft>
+</Update>
